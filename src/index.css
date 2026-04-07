@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --bg-deep: #08090E;
+  --bg-surface: #0C0D12;
+  --bg-warm: #0C0B09;
+  --bg-warm-alt: #0A0A08;
+  --bg-raised: #131318;
+  --bg-raised-warm: #141210;
+
+  --text-primary: #F0EDE6;
+  --text-secondary: #A8A29E;
+  --text-tertiary: #6B6560;
+
+  --accent: #C9A96E;
+  --accent-hover: #D4B87A;
+  --accent-text: #0A0A08;
+  --accent-glow: rgba(201, 169, 110, 0.12);
+
+  --border: rgba(240, 237, 230, 0.06);
+  --border-hover: rgba(240, 237, 230, 0.12);
+  --card-border: rgba(201, 169, 110, 0.08);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-deep);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(201, 169, 110, 0.25);
+  color: var(--text-primary);
+}
