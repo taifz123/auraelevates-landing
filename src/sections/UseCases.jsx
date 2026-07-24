@@ -19,16 +19,19 @@ export default function UseCases() {
 
         <div className="use-cases__grid">
           {USE_CASES.map((item, index) => (
-            <Reveal key={item.category} delay={(index % 3) * 70} className={`use-case use-case--${item.tone}`}>
+            <Reveal
+              key={item.category}
+              delay={(index % 3) * 70}
+              className={`use-case use-case--${item.tone}`}
+            >
               <article>
                 <div className="use-case__top">
                   <span>{item.number}</span>
                   <span>{item.category}</span>
                 </div>
                 <div className="use-case__graphic" aria-hidden="true">
+                  <span>{item.category.slice(0, 2).toUpperCase()}</span>
                   <i />
-                  <i />
-                  <span />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>

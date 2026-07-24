@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ActionButton from '../components/ActionButton'
+import MetaGlasses from '../components/MetaGlasses'
 import CONFIG from '../data/config'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -13,37 +14,28 @@ export default function Hero() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
 
     const context = gsap.context(() => {
-      gsap.from('.hero__copy > *', {
+      gsap.from('.hero__eyebrow, .hero h1 > span, .hero__lower > *', {
         opacity: 0,
-        y: 28,
-        duration: 0.9,
-        ease: 'power3.out',
-        stagger: 0.09,
+        y: 34,
+        duration: 1,
+        ease: 'power4.out',
+        stagger: 0.08,
       })
 
-      gsap.from('.hero__lens-shell', {
+      gsap.from('.hero__product', {
         opacity: 0,
-        scale: 0.88,
-        duration: 1.25,
-        ease: 'power3.out',
-        delay: 0.15,
+        scale: 0.9,
+        y: 46,
+        duration: 1.4,
+        ease: 'power4.out',
+        delay: 0.2,
       })
 
-      gsap.to('.hero__lens-shell', {
-        scale: 1.42,
-        yPercent: 22,
-        opacity: 0.22,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: root.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.7,
-        },
-      })
-
-      gsap.to('.hero__reflection', {
-        rotate: 35,
+      gsap.to('.hero__product', {
+        scale: 0.82,
+        yPercent: 35,
+        rotate: 2,
+        opacity: 0.18,
         ease: 'none',
         scrollTrigger: {
           trigger: root.current,
@@ -59,20 +51,34 @@ export default function Hero() {
 
   return (
     <section className="hero" id="top" ref={root}>
+      <div className="hero__field" aria-hidden="true">
+        <span />
+        <span />
+      </div>
       <div className="hero__grid shell">
-        <div className="hero__copy">
+        <div className="hero__eyebrow">
           <p className="eyebrow">
             <span />
-            First-person event filming
+            First-person film / Melbourne
           </p>
-          <h1>
-            Your event,
-            <br />
-            <em>from inside</em> the moment.
-          </h1>
+          <p>AE / 001</p>
+        </div>
+
+        <h1>
+          <span>Inside the</span>
+          <span>
+            <em>moment.</em>
+          </span>
+        </h1>
+
+        <div className="hero__product">
+          <MetaGlasses />
+        </div>
+
+        <div className="hero__lower">
           <p className="hero__lede">
-            Hands-free POV footage captured with Ray-Ban Meta smart glasses and edited into a
-            polished highlight reel.
+            Film the experience from the one place a traditional camera cannot stand: the
+            participant&apos;s point of view.
           </p>
           <div className="hero__actions">
             <ActionButton href="#work">See the POV</ActionButton>
@@ -80,29 +86,24 @@ export default function Hero() {
               DM to book
             </ActionButton>
           </div>
-        </div>
-
-        <div className="hero__visual" aria-label="AuraElevates brand mark">
-          <div className="hero__lens-shell">
-            <div className="hero__reflection" aria-hidden="true" />
-            <div className="hero__lens-rim" aria-hidden="true" />
-            <div className="hero__lens-core">
-              <img
-                src={CONFIG.brand.logo}
-                alt="AuraElevates"
-                width="760"
-                height="760"
-                fetchPriority="high"
-              />
-            </div>
-            <div className="hero__focus hero__focus--horizontal" aria-hidden="true" />
-            <div className="hero__focus hero__focus--vertical" aria-hidden="true" />
+          <div className="hero__facts" aria-label="Capture format">
+            <p>
+              <span>01</span>
+              Eye-level
+            </p>
+            <p>
+              <span>02</span>
+              Hands-free
+            </p>
+            <p>
+              <span>03</span>
+              Human-first
+            </p>
           </div>
-          <p className="hero__visual-note">POV / FILM / EDIT</p>
         </div>
       </div>
       <div className="hero__foot shell" aria-hidden="true">
-        <span>Scroll to enter the perspective</span>
+        <span>Scroll to enter</span>
         <i />
         <span>01 / 10</span>
       </div>

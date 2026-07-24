@@ -26,15 +26,21 @@ export default function Portfolio() {
 
         <Reveal className="portfolio__portal">
           <a href={CONFIG.contact.instagram} target="_blank" rel="noreferrer">
-            <div className="portfolio__rings" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-              <span />
+            <div className="portfolio__contact-sheet" aria-hidden="true">
+              {['Arrival', 'Action', 'Reaction', 'Reveal'].map((label, index) => (
+                <span key={label}>
+                  <i>{String(index + 1).padStart(2, '0')}</i>
+                  <strong>{label}</strong>
+                </span>
+              ))}
             </div>
             <div className="portfolio__portal-copy">
               <p>Live portfolio / @auraelevates</p>
-              <h3>Watch the real POV</h3>
+              <h3>
+                Watch the
+                <br />
+                real point of view
+              </h3>
               <span className="portfolio__play" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <path d="m9 7 7 5-7 5V7Z" />
@@ -46,8 +52,8 @@ export default function Portfolio() {
 
         <Reveal className="portfolio__foot">
           <p>
-            Captured through a 12MP ultra-wide camera, then selected and edited for the story,
-            platform, and pace.
+            No stock reel. No invented case study. The current body of work lives where it was made
+            to be watched.
           </p>
           <ActionButton href={CONFIG.contact.instagram} external variant="text">
             View our work

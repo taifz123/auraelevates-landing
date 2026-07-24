@@ -7,7 +7,6 @@ import Difference from './sections/Difference'
 import FAQ from './sections/FAQ'
 import Footer from './sections/Footer'
 import Hero from './sections/Hero'
-import LatestWork from './sections/LatestWork'
 import Portfolio from './sections/Portfolio'
 import Process from './sections/Process'
 import Trust from './sections/Trust'
@@ -32,7 +31,6 @@ export default function App() {
         <UseCases />
         <Trust />
         <FAQ />
-        <LatestWork />
         <Contact />
       </main>
       <Footer />

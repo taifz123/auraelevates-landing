@@ -25,25 +25,35 @@ export default function VisualProof() {
         </div>
 
         <Reveal className="pov__stage">
-          <div className="pov__ambient" aria-hidden="true" />
-          <div className="pov__reticle" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-            <span />
+          <div className="pov__index" aria-hidden="true">
+            <span>OPTIC / 12 MP</span>
+            <span>FIELD NOTE 01</span>
           </div>
-          <div className="pov__center">
-            <span className="pov__aperture" aria-hidden="true" />
-            <p>Eye-level capture</p>
-            <strong>THE VIEWER STEPS IN</strong>
+          <div className="pov__product">
+            <img
+              src="/product/meta-wayfarer-front.webp"
+              alt="Front view of Ray-Ban Meta Wayfarer smart glasses"
+              width="1200"
+              height="1200"
+              loading="lazy"
+            />
+            <span className="pov__callout pov__callout--camera">Camera</span>
+            <span className="pov__callout pov__callout--led">Capture LED</span>
           </div>
-          <div className="pov__meta pov__meta--top">
-            <span>HANDS FREE</span>
-            <span>REAL MOVEMENT</span>
+          <div className="pov__manifesto">
+            <p>The filming setup stops leading the room.</p>
+            <strong>
+              Both hands stay in the story.
+              <br />
+              The eye line becomes the edit.
+            </strong>
           </div>
-          <div className="pov__meta pov__meta--bottom">
-            <span>NATURAL INTERACTION</span>
-            <span>EDITED FOR IMPACT</span>
+          <div className="pov__coordinates" aria-hidden="true">
+            <span>HANDS / FREE</span>
+            <i />
+            <span>EYE / LEVEL</span>
+            <i />
+            <span>REAL / MOVEMENT</span>
           </div>
         </Reveal>
       </div>
