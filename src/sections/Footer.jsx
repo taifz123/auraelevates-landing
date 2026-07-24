@@ -1,27 +1,24 @@
+import BrandLogo from '../components/BrandLogo'
 import CONFIG from '../data/config'
 
 export default function Footer() {
-  const year = new Date().getFullYear()
-
   return (
     <footer className="footer">
-      <div className="shell">
-        <div className="footer__top">
-          <p className="footer__brand">{CONFIG.brand.name}</p>
-          <nav className="footer__links" aria-label="Footer navigation">
-            <a href="#perspective">Perspective</a>
-            <a href="#work">Work</a>
-            <a href="#process">Process</a>
-            <a href="#services">Services</a>
-            <a href={CONFIG.contact.bookingUrl}>Email</a>
-            <a href="#top">Back to top</a>
-          </nav>
-        </div>
-        <div className="footer__bottom">
-          <span>© {year} {CONFIG.brand.name}</span>
-          <span>Independent filming service · not affiliated with Meta</span>
-          <span>{CONFIG.contact.serviceArea}</span>
-        </div>
+      <div className="shell footer__top">
+        <a href="#top" aria-label="AuraElevates, back to top">
+          <BrandLogo />
+        </a>
+        <p>First-person event filming. Captured from inside the moment.</p>
+        <a href={CONFIG.contact.instagram} target="_blank" rel="noreferrer">
+          Instagram <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div className="shell footer__bottom">
+        <p>© {new Date().getFullYear()} AuraElevates</p>
+        <p>
+          AuraElevates is an independent filming company and is not affiliated with or endorsed by
+          Ray-Ban, Meta, or EssilorLuxottica.
+        </p>
       </div>
     </footer>
   )

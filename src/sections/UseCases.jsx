@@ -3,39 +3,37 @@ import { USE_CASES } from '../data/content'
 
 export default function UseCases() {
   return (
-    <section className="section use-cases" aria-labelledby="use-cases-title">
+    <section className="use-cases section" id="use-cases">
       <div className="shell">
-        <div className="use-cases__heading">
-          <Reveal>
-            <div>
-              <p className="section-label">Built for real movement</p>
-              <h2 className="title" id="use-cases-title" style={{ marginTop: '1.8rem' }}>
-                When being there is the story.
-              </h2>
-            </div>
-          </Reveal>
-          <Reveal delay={140}>
-            <p className="lede">
-              A different visual language for events, skilled work, hospitality, automotive,
-              property, training, travel, and behind-the-scenes content.
-            </p>
-          </Reveal>
-        </div>
-        <div className="use-cases__track" aria-label="Filming scenarios">
+        <Reveal className="use-cases__heading">
+          <p className="eyebrow">
+            <span />
+            Where POV changes the story
+          </p>
+          <h2>
+            Made for moments
+            <br />
+            <em>that move.</em>
+          </h2>
+        </Reveal>
+
+        <div className="use-cases__grid">
           {USE_CASES.map((item, index) => (
-            <article
-              className="case"
-              key={item.title}
-              style={{ '--case-light': item.light }}
-            >
-              <span className="case__index">
-                {String(index + 1).padStart(2, '0')} / {item.category}
-              </span>
-              <div className="case__caption">
+            <Reveal key={item.category} delay={(index % 3) * 70} className={`use-case use-case--${item.tone}`}>
+              <article>
+                <div className="use-case__top">
+                  <span>{item.number}</span>
+                  <span>{item.category}</span>
+                </div>
+                <div className="use-case__graphic" aria-hidden="true">
+                  <i />
+                  <i />
+                  <span />
+                </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-              </div>
-            </article>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

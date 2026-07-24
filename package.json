@@ -1,5 +1,5 @@
 {
-  "name": "sightline-film-studio",
+  "name": "auraelevates-landing",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,11 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/fiber": "^9.6.1",
     "gsap": "^3.15.0",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "three": "^0.185.1"
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

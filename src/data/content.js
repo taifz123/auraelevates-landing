@@ -1,80 +1,105 @@
-export const USE_CASES = [
-  {
-    title: 'The vows, from inside the aisle.',
-    category: 'Weddings & events',
-    description: 'Quiet, eye-level moments a traditional camera sees from the outside.',
-    light:
-      'linear-gradient(180deg, transparent 36%, rgba(10,10,9,.88)), radial-gradient(circle at 42% 22%, #c7ad8a, #4a3c31 34%, #17130f 72%)',
-  },
-  {
-    title: 'The craft, without stopping the hands.',
-    category: 'Trades & makers',
-    description: 'Process footage that follows the work instead of interrupting it.',
-    light:
-      'linear-gradient(180deg, transparent 36%, rgba(10,10,9,.88)), linear-gradient(125deg, #151513 20%, #705947 50%, #211a15 80%)',
-  },
-  {
-    title: 'Service that feels like a seat at the table.',
-    category: 'Hospitality',
-    description: 'From kitchen pass to final plate, captured at the pace of service.',
-    light:
-      'linear-gradient(180deg, transparent 36%, rgba(10,10,9,.88)), radial-gradient(circle at 70% 28%, #a04d2b, #3e281c 30%, #13110e 72%)',
-  },
-  {
-    title: 'The road, from the driver’s point of view.',
-    category: 'Automotive',
-    description: 'Natural movement, real reactions, and the details between destinations.',
-    light:
-      'linear-gradient(180deg, transparent 36%, rgba(10,10,9,.88)), linear-gradient(145deg, #6b756f, #283036 42%, #101213 76%)',
-  },
-]
-
 export const PROCESS = [
   {
-    title: 'Find the human angle',
+    number: '01',
+    title: 'Plan the perspective',
     description:
-      'We define what the viewer should feel, who wears the glasses, and which moments only a first-person camera can reveal.',
+      'We align on the moments that matter, who will wear the glasses, venue requirements, privacy, and the final deliverables.',
   },
   {
-    title: 'Plan for real movement',
+    number: '02',
+    title: 'Capture from inside',
     description:
-      'Access, consent, lighting, battery windows, sound, shot cues, and backup coverage are mapped without over-directing the moment.',
+      'We film hands-free with Ray-Ban Meta smart glasses, following the natural line of sight without putting a phone between people.',
   },
   {
-    title: 'Film without the barrier',
+    number: '03',
+    title: 'Shape the story',
     description:
-      'The operator stays present in the work or event. Hands remain free; interactions stay natural; the camera follows the line of sight.',
-  },
-  {
-    title: 'Shape it into a story',
-    description:
-      'Footage is selected, stabilised where appropriate, colour-finished, sound-designed, captioned, and delivered in the formats you need.',
+      'The strongest moments are selected, paced, colour-finished, sound-designed, captioned, and delivered as a polished highlight reel.',
   },
 ]
 
-export const SERVICES = [
+export const COMPARISON = [
   {
-    title: 'POV Session',
-    description:
-      'A focused filming block for a process, walkthrough, activation, venue, or day-in-the-life sequence.',
-    includes: ['Pre-shoot call', 'First-person camera operator', 'Organised source footage', 'Optional short edits'],
+    traditional: 'Observed from outside the action',
+    aura: 'Captured from the wearer’s point of view',
   },
   {
-    title: 'Event Perspective',
-    description:
-      'Discreet, human-scale coverage that sits inside the event and complements—rather than replaces—your main photo or video team.',
-    includes: ['Event run-sheet planning', 'Key-moment coverage', 'Fast selects', 'Vertical highlight options'],
+    traditional: 'A visible camera changes behaviour',
+    aura: 'Hands stay free and interactions stay natural',
   },
   {
-    title: 'Ongoing Content',
-    description:
-      'A repeatable production rhythm for teams who need authentic first-person content without turning every workday into a shoot.',
-    includes: ['Monthly filming plan', 'Repeat sessions', 'Edit allocation', 'Platform-ready exports'],
+    traditional: 'Built around the filming setup',
+    aura: 'Built around the experience itself',
+  },
+  {
+    traditional: 'A polished record of what happened',
+    aura: 'A polished memory of how it felt',
   },
 ]
 
-export const SHOWREEL_SLOTS = [
-  ['01 / Hero film', 'Replace with a 30–60 second original POV showreel'],
-  ['02 / Social cuts', 'Add real vertical examples in a future content pass'],
-  ['03 / Sound', 'Supply licensed music or original location audio'],
+export const USE_CASES = [
+  {
+    number: '01',
+    category: 'Events',
+    title: 'Inside the energy',
+    description:
+      'Guest arrivals, live activations, crowd reactions, and the small moments a camera at the edge can miss.',
+    tone: 'blue',
+  },
+  {
+    number: '02',
+    category: 'Hospitality',
+    title: 'Service in motion',
+    description:
+      'A first-person path from preparation to the table, with both hands free for the work.',
+    tone: 'silver',
+  },
+  {
+    number: '03',
+    category: 'Weddings',
+    title: 'The view from the aisle',
+    description:
+      'A personal layer of coverage designed to complement the main photography and film team.',
+    tone: 'violet',
+  },
+  {
+    number: '04',
+    category: 'Brands',
+    title: 'Put people in the experience',
+    description:
+      'Product demonstrations, launches, walkthroughs, and social stories that feel lived rather than staged.',
+    tone: 'ice',
+  },
+  {
+    number: '05',
+    category: 'Makers',
+    title: 'Let the hands keep working',
+    description:
+      'Show the process at eye level while the operator keeps moving, making, and interacting naturally.',
+    tone: 'graphite',
+  },
+]
+
+export const TRUST_POINTS = [
+  {
+    title: 'Planned with the organiser',
+    description:
+      'Access, key moments, who wears the glasses, and the run of the day are agreed before filming.',
+  },
+  {
+    title: 'Respectful of the venue',
+    description:
+      'Venue policies, recording notices, restricted spaces, and capture conditions are considered in the filming plan.',
+  },
+  {
+    title: 'Clear about deliverables',
+    description:
+      'Editing scope, formats, turnaround, and the handling of original clips are discussed before the shoot.',
+  },
+  {
+    title: 'Honest about the format',
+    description:
+      'The camera is best in usable ambient light. If another camera system is needed, that is identified during planning.',
+  },
 ]

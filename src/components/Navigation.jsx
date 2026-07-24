@@ -1,15 +1,24 @@
 import { useEffect, useState } from 'react'
 import CONFIG from '../data/config'
+import BrandLogo from './BrandLogo'
 
 const LINKS = [
-  ['Perspective', '#perspective'],
+  ['The POV', '#pov'],
   ['Work', '#work'],
   ['Process', '#process'],
-  ['Services', '#services'],
+  ['Use cases', '#use-cases'],
 ]
 
 export default function Navigation() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 24)
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => window.removeEventListener('scroll', update)
+  }, [])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -19,11 +28,10 @@ export default function Navigation() {
   }, [open])
 
   return (
-    <header className="nav">
+    <header className="nav" data-scrolled={scrolled} data-open={open}>
       <div className="nav__inner shell">
-        <a className="brand" href="#top" aria-label={`${CONFIG.brand.name}, home`}>
-          <span className="brand__mark" aria-hidden="true" />
-          {CONFIG.brand.name}
+        <a className="nav__brand" href="#top" aria-label="AuraElevates, home">
+          <BrandLogo />
         </a>
         <nav
           className="nav__links"
@@ -36,8 +44,25 @@ export default function Navigation() {
               {label}
             </a>
           ))}
+          <a
+            className="nav__mobile-book"
+            href={CONFIG.contact.instagram}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            DM to book
+          </a>
         </nav>
-        <span className="nav__meta">{CONFIG.contact.serviceArea}</span>
+        <a
+          className="nav__book"
+          href={CONFIG.contact.instagram}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span>DM to book</span>
+          <span aria-hidden="true">↗</span>
+        </a>
         <button
           className="nav__toggle"
           type="button"
@@ -46,7 +71,8 @@ export default function Navigation() {
           aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
           onClick={() => setOpen((value) => !value)}
         >
-          {open ? 'Close' : 'Menu'}
+          <span>{open ? 'Close' : 'Menu'}</span>
+          <i aria-hidden="true" />
         </button>
       </div>
     </header>

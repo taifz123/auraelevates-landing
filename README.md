@@ -1,8 +1,14 @@
-# SIGHTLINE — first-person film studio
+# AuraElevates
 
-A cinematic, responsive single-page website for an independent first-person
-filming service using smart glasses. The experience is built with React, Vite,
-Three.js, React Three Fiber, GSAP, and hand-authored CSS.
+Production landing page for AuraElevates, a first-person filming and editing company using Ray-Ban Meta smart glasses to capture events, brands, and experiences from inside the moment.
+
+## Stack
+
+- React 19
+- Vite
+- GSAP
+- Vanilla CSS
+- Vercel
 
 ## Local development
 
@@ -11,18 +17,18 @@ npm install
 npm run dev
 ```
 
-Create a production build with:
+## Production checks
 
 ```bash
+npm run lint
 npm run build
+npm run preview
 ```
 
-## Before launch
+The live domain is [auraelevatesco.com](https://www.auraelevatesco.com/).
 
-Replace the working brand, email address, service area, social links, and domain
-in `src/data/config.js`. Replace the labelled showreel placeholders with
-licensed, client-supplied footage and add a real Open Graph image at
-`public/og-placeholder.svg` with a final 1200 × 630 PNG or JPEG social card.
+## Content policy
 
-The site describes an independent service and intentionally does not claim any
-partnership with Meta.
+Only genuine AuraElevates footage and photography should be added to portfolio surfaces. Do not use generated people, events, smart glasses, client logos, testimonials, statistics, or performance claims.
+
+See `ASSET_CHECKLIST.md` before the first real media upload.

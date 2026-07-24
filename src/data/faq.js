@@ -1,33 +1,28 @@
 const FAQ = [
   {
-    question: 'What exactly is first-person filming?',
+    question: 'What is first-person event filming?',
     answer:
-      'A trained operator wears discreet smart glasses while moving naturally through the moment. The camera records from eye level, leaving both hands free and removing the barrier of a phone or camera rig.',
+      'A camera built into smart glasses records from the wearer’s eye line while both hands remain free. AuraElevates plans the perspective, captures the footage, and turns the strongest moments into a polished edit.',
   },
   {
-    question: 'Do you represent or work for Meta?',
+    question: 'Do you sell smart glasses?',
     answer:
-      'No. This is an independent filming service that uses commercially available smart-glasses technology. It is not affiliated with, endorsed by, or officially partnered with Meta.',
+      'No. AuraElevates is a filming and editing company. We use Ray-Ban Meta smart glasses as a capture tool for selected productions.',
   },
   {
-    question: 'What do I receive after filming?',
+    question: 'What do I receive?',
     answer:
-      'The deliverables are agreed before the shoot. They can include organised original clips, colour-finished vertical edits, a short highlight film, or an ongoing package of ready-to-publish social content.',
+      'Deliverables are agreed before filming and can include a highlight reel, vertical social edits, selected clips, or a custom content package.',
   },
   {
-    question: 'Will people know they are being recorded?',
+    question: 'How are privacy and consent handled?',
     answer:
-      'Consent and privacy are planned for every production. Recording indicators remain unobstructed, venue rules are respected, and the filming plan can include signage, releases, restricted areas, or a clear guest notice where needed.',
+      'Every shoot is planned with the organiser. Venue rules, recording notices, restricted areas, guest considerations, and the handling of original footage can all be addressed before capture.',
   },
   {
-    question: 'Is it suitable for low-light or high-end commercial work?',
+    question: 'Does this replace traditional event videography?',
     answer:
-      'Smart glasses are strongest in natural or well-designed ambient light. For productions needing controlled low-light performance, long lenses, or cinema-camera resolution, first-person footage can be combined with a conventional camera crew rather than forced into the wrong role.',
-  },
-  {
-    question: 'How far in advance should a shoot be booked?',
-    answer:
-      'Lead time depends on the event, location, editing scope, and access requirements. Share the date and brief early; straightforward local sessions can often be planned faster than multi-location events or brand campaigns.',
+      'It can work as a focused standalone format or add a first-person layer to a larger production. It is designed to capture a different perspective, not imitate every capability of a cinema camera.',
   },
 ]
 
