@@ -1,28 +1,34 @@
 const FAQ = [
   {
-    question: "Is the reading really free?",
-    answer: "Yes. The initial personalised reading is completely free — no credit card, no commitment. You'll receive a detailed overview of your Life Path number, personality traits, and core strengths. If you want to go deeper, there are optional premium reports available, but the free reading alone is genuinely valuable.",
+    question: 'What exactly is first-person filming?',
+    answer:
+      'A trained operator wears discreet smart glasses while moving naturally through the moment. The camera records from eye level, leaving both hands free and removing the barrier of a phone or camera rig.',
   },
   {
-    question: "How does numerology actually work?",
-    answer: "Numerology is the study of the vibrational meaning of numbers. Your birth date and name aren't random — they carry specific frequencies that influence your personality, challenges, and life direction. It's one of the oldest sciences of self-knowledge, practised for over 4,000 years across civilisations.",
+    question: 'Do you represent or work for Meta?',
+    answer:
+      'No. This is an independent filming service that uses commercially available smart-glasses technology. It is not affiliated with, endorsed by, or officially partnered with Meta.',
   },
   {
-    question: "How accurate is the reading?",
-    answer: "Most people are surprised by how specific and personally relevant their reading is. It's not generic horoscope content — the report is generated based on your unique birth details, so no two readings are the same. See for yourself — the free reading takes less than 60 seconds to generate.",
+    question: 'What do I receive after filming?',
+    answer:
+      'The deliverables are agreed before the shoot. They can include organised original clips, colour-finished vertical edits, a short highlight film, or an ongoing package of ready-to-publish social content.',
   },
   {
-    question: "How long does it take?",
-    answer: "You'll enter your birth date and name, and your personalised reading is generated in under 60 seconds. The free report takes about 5-10 minutes to read through, and most people find themselves re-reading sections multiple times.",
+    question: 'Will people know they are being recorded?',
+    answer:
+      'Consent and privacy are planned for every production. Recording indicators remain unobstructed, venue rules are respected, and the filming plan can include signage, releases, restricted areas, or a clear guest notice where needed.',
   },
   {
-    question: "What will I learn about myself?",
-    answer: "Your Life Path number (the most important number in numerology), your core personality traits, your natural strengths and blind spots, relationship patterns, ideal career directions, and what phase of life you're currently moving through.",
+    question: 'Is it suitable for low-light or high-end commercial work?',
+    answer:
+      'Smart glasses are strongest in natural or well-designed ambient light. For productions needing controlled low-light performance, long lenses, or cinema-camera resolution, first-person footage can be combined with a conventional camera crew rather than forced into the wrong role.',
   },
   {
-    question: "Is my information safe?",
-    answer: "Absolutely. Your birth details are used solely to generate your reading. They are not shared, sold, or used for any other purpose. The reading platform uses bank-level encryption for all data.",
+    question: 'How far in advance should a shoot be booked?',
+    answer:
+      'Lead time depends on the event, location, editing scope, and access requirements. Share the date and brief early; straightforward local sessions can often be planned faster than multi-location events or brand campaigns.',
   },
-];
+]
 
-export default FAQ;
+export default FAQ

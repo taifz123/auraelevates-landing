@@ -1,105 +1,78 @@
-import { useMemo } from 'react';
-import CTAButton from '../components/CTAButton';
+import { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ActionButton from '../components/ActionButton'
 
-const SUBHEADLINES = {
-  path: "Your birth date holds a blueprint for your entire life. Discover your Life Path number — the single most important number in numerology — free.",
-  love: "Why do you attract the same patterns in relationships? Your numerology profile reveals the answer — and what to do about it. Free reading.",
-  career: "Feeling stuck or unfulfilled in your work? Your Life Path number reveals the career directions you're naturally wired for. Free reading.",
-  2026: "2026 is a pivotal year for your numbers. Discover what's coming — and how to prepare — with your free personalised reading.",
-};
+gsap.registerPlugin(ScrollTrigger)
 
-const DEFAULT_SUBHEADLINE = "Discover your Life Path number in 60 seconds — free. Learn what your birth date reveals about your personality, purpose, and what's coming next.";
+export default function Hero({ children }) {
+  const root = useRef(null)
 
-export default function Hero() {
-  const subheadline = useMemo(() => {
-    const params = new URLSearchParams(window.location.search);
-    const ref = params.get('ref');
-    return (ref && SUBHEADLINES[ref]) || DEFAULT_SUBHEADLINE;
-  }, []);
+  useLayoutEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+
+    const context = gsap.context(() => {
+      const timeline = gsap.timeline({ defaults: { ease: 'power4.out' } })
+      timeline
+        .from('.hero__canvas', { opacity: 0, scale: 1.12, duration: 1.8 })
+        .from('.hero__title .line > span', { yPercent: 110, duration: 1.15, stagger: 0.12 }, 0.25)
+        .from('.hero__body', { y: 24, opacity: 0, duration: 0.9 }, 0.75)
+        .from('.hero__counter, .hero__footer', { opacity: 0, duration: 0.8, stagger: 0.1 }, 0.85)
+
+      gsap.to('.hero__stage', {
+        yPercent: 11,
+        scale: 0.94,
+        opacity: 0.45,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: root.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.8,
+        },
+      })
+    }, root)
+
+    return () => context.revert()
+  }, [])
 
   return (
-    <section
-      id="hero"
-      style={{
-        background: 'radial-gradient(ellipse at 50% 40%, rgba(201, 169, 110, 0.03) 0%, transparent 70%), #08090E',
-        minHeight: '90vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '80px 20px',
-      }}
-    >
-      <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
-        {/* Subtle brand mark */}
-        <img
-          src="/logo.jpg"
-          alt="AuraElevates"
-          style={{
-            width: '48px',
-            height: '48px',
-            objectFit: 'cover',
-            borderRadius: '8px',
-            opacity: 0.7,
-            margin: '0 auto 32px',
-            display: 'block',
-          }}
-        />
-
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '12px',
-            fontWeight: 700,
-            letterSpacing: '0.14em',
-            textTransform: 'uppercase',
-            color: '#C9A96E',
-            marginBottom: '24px',
-          }}
-        >
-          PERSONALISED NUMEROLOGY READING
-        </p>
-
-        <h1
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(40px, 6vw, 72px)',
-            fontWeight: 400,
-            letterSpacing: '-0.02em',
-            lineHeight: 1.1,
-            color: 'var(--text-primary)',
-            marginBottom: '24px',
-          }}
-        >
-          The numbers behind your name already know your story
-        </h1>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '17px',
-            fontWeight: 400,
-            lineHeight: 1.7,
-            color: 'var(--text-secondary)',
-            maxWidth: '560px',
-            margin: '0 auto 40px',
-          }}
-        >
-          {subheadline}
-        </p>
-
-        <CTAButton large>Discover My Life Path &rarr;</CTAButton>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '13px',
-            color: 'var(--text-tertiary)',
-            marginTop: '16px',
-          }}
-        >
-          Free &bull; Takes 60 seconds &bull; 4,000+ years of wisdom
-        </p>
+    <section ref={root} className="hero" id="top" aria-labelledby="hero-title">
+      <div className="hero__stage">
+        <div className="hero__canvas">{children}</div>
+      </div>
+      <div className="hero__content shell">
+        <div className="hero__copy">
+          <p className="section-label">First-person filmmaking</p>
+          <h1 className="display hero__title" id="hero-title">
+            <span className="line">
+              <span>Your world.</span>
+            </span>
+            <span className="line">
+              <span>
+                As <em>lived.</em>
+              </span>
+            </span>
+          </h1>
+          <div className="hero__body">
+            <p>
+              Hands-free films captured from eye level—so the viewer does not simply watch the
+              moment. They enter it.
+            </p>
+            <ActionButton href="#contact">Start a project</ActionButton>
+          </div>
+        </div>
+        <div className="hero__counter" aria-hidden="true">
+          <strong>01</strong>
+          See what the camera
+          <br />
+          usually stands outside
+        </div>
+        <div className="hero__footer">
+          <span className="hero__scroll">Scroll into the perspective</span>
+          <span>Independent studio · smart-glasses capture</span>
+        </div>
       </div>
     </section>
-  );
+  )
 }

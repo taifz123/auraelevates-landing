@@ -1,65 +1,68 @@
-import { useEffect, useRef } from 'react';
-import Hero from './sections/Hero';
-import WhatIsNumerology from './sections/WhatIsNumerology';
-import WhatYouDiscover from './sections/WhatYouDiscover';
-import Testimonials from './sections/Testimonials';
-import HowItWorks from './sections/HowItWorks';
-import FAQ from './sections/FAQ';
-import FinalCTA from './sections/FinalCTA';
-import StickyMobileBar from './components/StickyMobileBar';
+import { lazy, Suspense, useEffect, useState } from 'react'
+import Navigation from './components/Navigation'
+import ScrollProgress from './components/ScrollProgress'
+import Hero from './sections/Hero'
+import Manifesto from './sections/Manifesto'
+import Perspective from './sections/Perspective'
+import UseCases from './sections/UseCases'
+import Showreel from './sections/Showreel'
+import Process from './sections/Process'
+import Services from './sections/Services'
+import FAQ from './sections/FAQ'
+import Contact from './sections/Contact'
+import Footer from './sections/Footer'
 
-function useScrollReveal() {
-  const ref = useRef(null);
+const GlassesScene = lazy(() => import('./components/GlassesScene'))
+
+function HeroVisual() {
+  const [enhanced, setEnhanced] = useState(false)
 
   useEffect(() => {
-    const container = ref.current;
-    if (!container) return;
+    const media = window.matchMedia('(min-width: 768px) and (prefers-reduced-motion: no-preference)')
+    const canvas = document.createElement('canvas')
+    const hasWebGL = Boolean(
+      canvas.getContext('webgl2') ||
+        canvas.getContext('webgl') ||
+        canvas.getContext('experimental-webgl'),
+    )
+    const update = () => setEnhanced(media.matches && hasWebGL)
 
-    const elements = container.querySelectorAll('[data-reveal]');
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+  if (!enhanced) return <div className="glasses-fallback" aria-hidden="true" />
 
-    elements.forEach((el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 500ms cubic-bezier(0.25, 0.1, 0.25, 1), transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1)';
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  return ref;
-}
-
-function RevealWrapper({ children }) {
-  return <div data-reveal>{children}</div>;
+  return (
+    <Suspense fallback={<div className="glasses-fallback" aria-hidden="true" />}>
+      <GlassesScene />
+    </Suspense>
+  )
 }
 
 export default function App() {
-  const appRef = useScrollReveal();
-
   return (
-    <div ref={appRef}>
-      <Hero />
-      <RevealWrapper><WhatIsNumerology /></RevealWrapper>
-      <RevealWrapper><WhatYouDiscover /></RevealWrapper>
-      <RevealWrapper><Testimonials /></RevealWrapper>
-      <RevealWrapper><HowItWorks /></RevealWrapper>
-      <RevealWrapper><FAQ /></RevealWrapper>
-      <RevealWrapper><FinalCTA /></RevealWrapper>
-      <StickyMobileBar />
-    </div>
-  );
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <ScrollProgress />
+      <Navigation />
+      <main id="main-content">
+        <Hero>
+          <HeroVisual />
+        </Hero>
+        <Manifesto />
+        <Perspective />
+        <UseCases />
+        <Showreel />
+        <Process />
+        <Services />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  )
 }
