@@ -46,14 +46,15 @@ export default function MetaGlasses() {
       tiltX += (targetTiltX - tiltX) * 0.06
 
       const sideWeight = clamp(Math.abs(pose), 0, 1)
-      const frontWeight = clamp(1 - sideWeight * 1.22, 0, 1)
-      const leftWeight = pose < 0 ? sideWeight : 0
-      const rightWeight = pose > 0 ? sideWeight : 0
-      const weightTotal = frontWeight + leftWeight + rightWeight || 1
+      const transition = clamp((sideWeight - 0.56) / 0.16, 0, 1)
+      const easedTransition = transition * transition * (3 - 2 * transition)
+      const frontWeight = 1 - easedTransition
+      const leftWeight = pose < 0 ? easedTransition : 0
+      const rightWeight = pose > 0 ? easedTransition : 0
 
-      productImages[0].style.opacity = `${leftWeight / weightTotal}`
-      productImages[1].style.opacity = `${frontWeight / weightTotal}`
-      productImages[2].style.opacity = `${rightWeight / weightTotal}`
+      productImages[0].style.opacity = `${leftWeight}`
+      productImages[1].style.opacity = `${frontWeight}`
+      productImages[2].style.opacity = `${rightWeight}`
 
       object.style.setProperty('--orbit-x', `${tiltX.toFixed(3)}deg`)
       object.style.setProperty('--orbit-y', `${tiltY.toFixed(3)}deg`)
