@@ -640,25 +640,6 @@ h2 {
   pointer-events: auto;
 }
 
-.hero__visual-note {
-  position: absolute;
-  z-index: 5;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-.hero__visual-note span {
-  color: var(--blue-light);
-}
-
 .hero__proof {
   position: relative;
   z-index: 4;
@@ -2209,10 +2190,6 @@ h2 {
   }
 
   .product-orbit__caption span:last-child {
-    display: none;
-  }
-
-  .hero__visual-note {
     display: none;
   }
 

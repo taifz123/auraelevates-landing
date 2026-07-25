@@ -107,7 +107,7 @@ export const PROCESS = [
     number: '03',
     title: 'Build the final film',
     description:
-      'The strongest moments are selected, paced, colour-finished, sound-designed and prepared for delivery.',
+      'The strongest moments are selected, paced, colour-finished, shaped with sound and prepared for delivery.',
   },
 ]
 

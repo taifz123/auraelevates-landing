@@ -44,10 +44,6 @@ export default function Hero() {
           <div className="hero__product">
             <MetaGlasses />
           </div>
-          <p className="hero__visual-note">
-            <span>01</span>
-            Product to perspective
-          </p>
         </div>
 
         <div className="hero__proof" aria-label="Service highlights">
