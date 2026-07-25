@@ -1,112 +1,75 @@
-import { useLayoutEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ActionButton from '../components/ActionButton'
+import MediaPlayer from '../components/MediaPlayer'
 import MetaGlasses from '../components/MetaGlasses'
 import CONFIG from '../data/config'
 
-gsap.registerPlugin(ScrollTrigger)
-
 export default function Hero() {
-  const root = useRef(null)
-
-  useLayoutEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
-
-    const context = gsap.context(() => {
-      gsap.from('.hero__eyebrow, .hero h1 > span, .hero__lower > *', {
-        opacity: 0,
-        y: 34,
-        duration: 1,
-        ease: 'power4.out',
-        stagger: 0.08,
-      })
-
-      gsap.from('.hero__product', {
-        opacity: 0,
-        scale: 0.9,
-        y: 46,
-        duration: 1.4,
-        ease: 'power4.out',
-        delay: 0.2,
-      })
-
-      gsap.to('.hero__product', {
-        scale: 0.82,
-        yPercent: 35,
-        rotate: 2,
-        opacity: 0.18,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: root.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.7,
-        },
-      })
-    }, root)
-
-    return () => context.revert()
-  }, [])
-
   return (
-    <section className="hero" id="top" ref={root}>
+    <section className="hero" id="top">
       <div className="hero__field" aria-hidden="true">
         <span />
         <span />
+        <i />
       </div>
-      <div className="hero__grid shell">
-        <div className="hero__eyebrow">
-          <p className="eyebrow">
+
+      <div className="shell hero__layout">
+        <div className="hero__copy">
+          <p className="eyebrow hero__eyebrow">
             <span />
-            First-person film / Melbourne
+            First-person event filming
           </p>
-          <p>AE / 001</p>
-        </div>
-
-        <h1>
-          <span>Inside the</span>
-          <span>
-            <em>moment.</em>
-          </span>
-        </h1>
-
-        <div className="hero__product">
-          <MetaGlasses />
-        </div>
-
-        <div className="hero__lower">
+          <h1>
+            Your event.
+            <br />
+            <em>From inside it.</em>
+          </h1>
           <p className="hero__lede">
-            Film the experience from the one place a traditional camera cannot stand: the
-            participant&apos;s point of view.
+            Hands-free POV captured with Ray-Ban Meta smart glasses, then shaped into a polished
+            film built for people to feel.
           </p>
           <div className="hero__actions">
-            <ActionButton href="#work">See the POV</ActionButton>
+            <ActionButton href="#work">Watch the demonstration</ActionButton>
             <ActionButton href={CONFIG.contact.instagram} external variant="ghost">
-              DM to book
+              DM to discuss your event
             </ActionButton>
           </div>
-          <div className="hero__facts" aria-label="Capture format">
-            <p>
-              <span>01</span>
-              Eye-level
-            </p>
-            <p>
-              <span>02</span>
-              Hands-free
-            </p>
-            <p>
-              <span>03</span>
-              Human-first
-            </p>
+        </div>
+
+        <div className="hero__visual">
+          <div className="hero__aperture" aria-hidden="true">
+            <span />
+            <span />
           </div>
+          <MediaPlayer className="hero__film" compact />
+          <div className="hero__product">
+            <MetaGlasses />
+          </div>
+          <p className="hero__visual-note">
+            <span>01</span>
+            Product to perspective
+          </p>
+        </div>
+
+        <div className="hero__proof" aria-label="Service highlights">
+          <p>
+            <span>01</span>
+            Natural eye line
+          </p>
+          <p>
+            <span>02</span>
+            Both hands free
+          </p>
+          <p>
+            <span>03</span>
+            Edited delivery
+          </p>
         </div>
       </div>
-      <div className="hero__foot shell" aria-hidden="true">
-        <span>Scroll to enter</span>
-        <i />
-        <span>01 / 10</span>
-      </div>
+
+      <a className="hero__scroll" href="#work">
+        <span>Enter the point of view</span>
+        <i aria-hidden="true" />
+      </a>
     </section>
   )
 }

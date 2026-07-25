@@ -1,17 +1,15 @@
 import Navigation from './components/Navigation'
 import ScrollProgress from './components/ScrollProgress'
 import StickyBooking from './components/StickyBooking'
-import Comparison from './sections/Comparison'
+import CaseStudy from './sections/CaseStudy'
 import Contact from './sections/Contact'
-import Difference from './sections/Difference'
 import FAQ from './sections/FAQ'
 import Footer from './sections/Footer'
 import Hero from './sections/Hero'
-import Portfolio from './sections/Portfolio'
+import Offer from './sections/Offer'
 import Process from './sections/Process'
-import Trust from './sections/Trust'
+import ProductStory from './sections/ProductStory'
 import UseCases from './sections/UseCases'
-import VisualProof from './sections/VisualProof'
 
 export default function App() {
   return (
@@ -23,13 +21,11 @@ export default function App() {
       <Navigation />
       <main id="main-content">
         <Hero />
-        <VisualProof />
-        <Difference />
-        <Portfolio />
-        <Process />
-        <Comparison />
+        <CaseStudy />
+        <Offer />
+        <ProductStory />
         <UseCases />
-        <Trust />
+        <Process />
         <FAQ />
         <Contact />
       </main>

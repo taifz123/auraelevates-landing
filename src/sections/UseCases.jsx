@@ -1,3 +1,4 @@
+import ActionButton from '../components/ActionButton'
 import Reveal from '../components/Reveal'
 import { USE_CASES } from '../data/content'
 
@@ -8,37 +9,39 @@ export default function UseCases() {
         <Reveal className="use-cases__heading">
           <p className="eyebrow">
             <span />
-            Where POV changes the story
+            Where it works
           </p>
           <h2>
-            Made for moments
+            Choose the viewpoint.
             <br />
-            <em>that move.</em>
+            <em>Then shape the output.</em>
           </h2>
         </Reveal>
 
-        <div className="use-cases__grid">
+        <div className="use-cases__list">
           {USE_CASES.map((item, index) => (
-            <Reveal
-              key={item.category}
-              delay={(index % 3) * 70}
-              className={`use-case use-case--${item.tone}`}
-            >
+            <Reveal key={item.number} delay={index * 55}>
               <article>
-                <div className="use-case__top">
-                  <span>{item.number}</span>
-                  <span>{item.category}</span>
+                <span className="use-cases__number">{item.number}</span>
+                <div>
+                  <p className="micro-label">{item.category}</p>
+                  <h3>{item.title}</h3>
                 </div>
-                <div className="use-case__graphic" aria-hidden="true">
-                  <span>{item.category.slice(0, 2).toUpperCase()}</span>
-                  <i />
+                <div className="use-cases__detail">
+                  <p>{item.description}</p>
+                  <span>{item.output}</span>
                 </div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
               </article>
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="use-cases__cta">
+          <p>Have a format that is not listed? Start with the moment you need people to experience.</p>
+          <ActionButton href="#contact" variant="text">
+            Describe your project
+          </ActionButton>
+        </Reveal>
       </div>
     </section>
   )

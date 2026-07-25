@@ -1,13 +1,13 @@
 # AuraElevates asset checklist
 
-The website is intentionally launch-safe without fabricated portfolio content. Add only media created by AuraElevates or supplied with documented permission.
+The website is launch-safe without fabricated client content. The current four-second film is presented as a self-initiated demonstration, not a commission.
 
 ## Highest priority
 
-- 30 to 60 second landscape hero reel
+- 15 to 30 second landscape hero reel
 - Mobile-optimised vertical hero cut
 - Desktop and mobile poster frames for both hero videos
-- 8 to 12 short first-person clips covering different event moments
+- 4 to 8 short first-person clips covering different event moments
 - 4 to 6 strong still frames exported from genuine AuraElevates footage
 
 ## Brand and process
@@ -19,10 +19,10 @@ The website is intentionally launch-safe without fabricated portfolio content. A
 
 ## Proof and business details
 
-- Approved written testimonials with names and usage consent
-- Approved client logos with usage permission
+- Approved written testimonials with names and usage consent, once clients exist
+- Approved client logos with usage permission, once clients exist
 - Confirmed public contact email, if one should appear
-- Confirmed service area, if one should appear
+- Confirmed service area
 - Confirmed Ray-Ban Meta hardware generation
 - Confirmed preferred turnaround wording
 

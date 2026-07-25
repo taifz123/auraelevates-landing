@@ -3,10 +3,10 @@ import CONFIG from '../data/config'
 import BrandLogo from './BrandLogo'
 
 const LINKS = [
-  ['The POV', '#pov'],
   ['Work', '#work'],
+  ['Service', '#service'],
   ['Process', '#process'],
-  ['Use cases', '#use-cases'],
+  ['FAQ', '#faq'],
 ]
 
 export default function Navigation() {

@@ -8,7 +8,7 @@ export default function Footer() {
         <a href="#top" aria-label="AuraElevates, back to top">
           <BrandLogo />
         </a>
-        <p>First-person event filming. Captured from inside the moment.</p>
+        <p>First-person films from inside the moment.</p>
         <a href={CONFIG.contact.instagram} target="_blank" rel="noreferrer">
           Instagram <span aria-hidden="true">↗</span>
         </a>
@@ -17,7 +17,7 @@ export default function Footer() {
         <p>© {new Date().getFullYear()} AuraElevates</p>
         <p>
           AuraElevates is an independent filming company and is not affiliated with or endorsed by
-          Ray-Ban, Meta, or EssilorLuxottica.
+          Ray-Ban, Meta or EssilorLuxottica.
         </p>
       </div>
     </footer>

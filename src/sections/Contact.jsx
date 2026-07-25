@@ -1,30 +1,38 @@
-import ActionButton from '../components/ActionButton'
+import BriefBuilder from '../components/BriefBuilder'
 import Reveal from '../components/Reveal'
 import CONFIG from '../data/config'
 
 export default function Contact() {
   return (
     <section className="contact section" id="contact">
-      <div className="contact__glow" aria-hidden="true" />
-      <div className="shell contact__inner">
-        <Reveal>
-          <p className="eyebrow eyebrow--center">
+      <div className="contact__field" aria-hidden="true">
+        <span />
+      </div>
+      <div className="shell contact__layout">
+        <Reveal className="contact__intro">
+          <p className="eyebrow">
             <span />
-            Book AuraElevates
-            <span />
+            Discuss your event
           </p>
           <h2>
-            Put your audience
+            Start with the moment
             <br />
-            <em>inside the moment.</em>
+            <em>people need to feel.</em>
           </h2>
           <p>
-            Tell us what you are planning, when it is happening, and the feeling you want the final
-            film to carry.
+            Build a concise project brief here. Then copy it into a direct conversation with
+            {` ${CONFIG.contact.handle}`}.
           </p>
-          <ActionButton href={CONFIG.contact.instagram} external className="contact__button">
-            DM AuraElevates
-          </ActionButton>
+          <div className="contact__direct">
+            <span>Prefer to skip the form?</span>
+            <a href={CONFIG.contact.instagram} target="_blank" rel="noreferrer">
+              DM AuraElevates <i aria-hidden="true">↗</i>
+            </a>
+          </div>
+        </Reveal>
+
+        <Reveal className="contact__builder" delay={100}>
+          <BriefBuilder />
         </Reveal>
       </div>
     </section>

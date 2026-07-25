@@ -6,15 +6,37 @@ export default function StickyBooking() {
 
   useEffect(() => {
     const hero = document.querySelector('#top')
+    const contact = document.querySelector('#contact')
     if (!hero) return undefined
 
-    const observer = new IntersectionObserver(
-      ([entry]) => setVisible(!entry.isIntersecting),
+    let heroVisible = true
+    let contactVisible = false
+    const update = () => setVisible(!heroVisible && !contactVisible)
+
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => {
+        heroVisible = entry.isIntersecting
+        update()
+      },
       { threshold: 0.05 },
     )
+    const contactObserver = contact
+      ? new IntersectionObserver(
+          ([entry]) => {
+            contactVisible = entry.isIntersecting
+            update()
+          },
+          { threshold: 0.08 },
+        )
+      : null
 
-    observer.observe(hero)
-    return () => observer.disconnect()
+    heroObserver.observe(hero)
+    if (contact && contactObserver) contactObserver.observe(contact)
+
+    return () => {
+      heroObserver.disconnect()
+      contactObserver?.disconnect()
+    }
   }, [])
 
   return (
@@ -25,7 +47,7 @@ export default function StickyBooking() {
       target="_blank"
       rel="noreferrer"
     >
-      <span>Discuss your event</span>
+      <span>DM to book</span>
       <span aria-hidden="true">↗</span>
     </a>
   )

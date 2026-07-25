@@ -1,36 +1,31 @@
 import Reveal from '../components/Reveal'
-import { PROCESS } from '../data/content'
+import { PROCESS, TRUST_POINTS } from '../data/content'
 
 export default function Process() {
   return (
     <section className="process section" id="process">
-      <div className="shell">
-        <Reveal className="section-heading section-heading--split">
-          <div>
-            <p className="eyebrow">
-              <span />
-              How it works
-            </p>
-            <h2>
-              From eye line
-              <br />
-              <em>to final cut.</em>
-            </h2>
-          </div>
-          <p className="section-heading__copy">
-            A considered process keeps the filming light while giving the finished piece a clear
-            creative purpose.
+      <div className="shell process__layout">
+        <Reveal className="process__intro">
+          <p className="eyebrow">
+            <span />
+            How it works
+          </p>
+          <h2>
+            Light during capture.
+            <br />
+            <em>Intentional everywhere else.</em>
+          </h2>
+          <p>
+            The equipment stays compact. Planning, consent, footage handling and the final edit stay
+            considered.
           </p>
         </Reveal>
 
-        <div className="process__list">
+        <div className="process__steps">
           {PROCESS.map((item, index) => (
-            <Reveal key={item.number} delay={index * 90}>
-              <article className="process__item">
-                <span className="process__number">{item.number}</span>
-                <div className="process__line" aria-hidden="true">
-                  <i />
-                </div>
+            <Reveal key={item.number} delay={index * 70}>
+              <article>
+                <span>{item.number}</span>
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -39,6 +34,18 @@ export default function Process() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="process__trust">
+          <p className="micro-label">Before recording begins</p>
+          <ul>
+            {TRUST_POINTS.map((point) => (
+              <li key={point}>
+                <span aria-hidden="true" />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   )

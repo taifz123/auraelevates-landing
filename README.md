@@ -1,12 +1,11 @@
 # AuraElevates
 
-Production landing page for AuraElevates, a first-person filming and editing company using Ray-Ban Meta smart glasses to capture events, brands, and experiences from inside the moment.
+Production website for AuraElevates, a first-person filming and editing company using Ray-Ban Meta smart glasses to capture events, brands and experiences from inside the moment.
 
 ## Stack
 
 - React 19
 - Vite
-- GSAP
 - Vanilla CSS
 - Vercel
 
@@ -29,6 +28,8 @@ The live domain is [auraelevatesco.com](https://www.auraelevatesco.com/).
 
 ## Content policy
 
-Only genuine AuraElevates footage and photography should be added to portfolio surfaces. Do not use generated people, events, smart glasses, client logos, testimonials, statistics, or performance claims.
+The launch case study is explicitly labelled as a self-initiated demonstration. It must never be presented as paid client work.
 
-See `ASSET_CHECKLIST.md` before the first real media upload.
+Do not invent clients, testimonials, results, statistics, partnerships or hardware claims. Accurate supplied product renders may be used as product reference imagery. New portfolio items must be labelled according to what they actually are.
+
+See `ASSET_CHECKLIST.md` before adding the first commissioned project.
