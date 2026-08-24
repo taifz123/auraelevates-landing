@@ -1,36 +1,30 @@
-import Navigation from './components/Navigation'
-import ScrollProgress from './components/ScrollProgress'
-import StickyBooking from './components/StickyBooking'
-import CaseStudy from './sections/CaseStudy'
-import Contact from './sections/Contact'
-import FAQ from './sections/FAQ'
-import Footer from './sections/Footer'
+import React from 'react'
+import Nav from './components/Nav'
+import Footer from './components/Footer'
 import Hero from './sections/Hero'
-import Offer from './sections/Offer'
-import Process from './sections/Process'
-import ProductStory from './sections/ProductStory'
-import UseCases from './sections/UseCases'
+import Problem from './sections/Problem'
+import Reframe from './sections/Reframe'
+import Method from './sections/Method'
+import Product from './sections/Product'
+import Confidence from './sections/Confidence'
+import FAQ from './sections/FAQ'
+import FinalCTA from './sections/FinalCTA'
 
 export default function App() {
   return (
     <>
-      <a className="skip-link" href="#main-content">
-        Skip to content
-      </a>
-      <ScrollProgress />
-      <Navigation />
-      <main id="main-content">
+      <Nav />
+      <main id="top">
         <Hero />
-        <CaseStudy />
-        <Offer />
-        <ProductStory />
-        <UseCases />
-        <Process />
+        <Problem />
+        <Reframe />
+        <Method />
+        <Product />
+        <Confidence />
         <FAQ />
-        <Contact />
+        <FinalCTA />
       </main>
       <Footer />
-      <StickyBooking />
     </>
   )
 }

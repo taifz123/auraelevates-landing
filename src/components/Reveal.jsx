@@ -1,38 +1,45 @@
-import { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-export default function Reveal({ children, className = '', delay = 0 }) {
+// Lightweight scroll-reveal. Respects prefers-reduced-motion via CSS.
+// Safety net: if IntersectionObserver never reports intersection (e.g. some
+// headless renderers), the element is revealed after a short delay so
+// content is never left hidden.
+export default function Reveal({ as, children, className = '', ...rest }) {
+  const Tag = as || 'div'
   const ref = useRef(null)
+  const [visible, setVisible] = useState(
+    () => typeof IntersectionObserver === 'undefined'
+  )
 
   useEffect(() => {
-    const element = ref.current
-    if (!element) return undefined
+    const el = ref.current
+    if (!el || visible) return
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      element.dataset.visible = 'true'
-      return undefined
+    let io
+    const fallback = setTimeout(() => setVisible(true), 1500)
+
+    if (typeof IntersectionObserver !== 'undefined') {
+      io = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible(true)
+            io.disconnect()
+          }
+        },
+        { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+      )
+      io.observe(el)
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          element.dataset.visible = 'true'
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
-    )
-
-    observer.observe(element)
-    return () => observer.disconnect()
-  }, [])
+    return () => {
+      clearTimeout(fallback)
+      if (io) io.disconnect()
+    }
+  }, [visible])
 
   return (
-    <div
-      ref={ref}
-      className={`reveal ${className}`.trim()}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
+    <Tag ref={ref} className={`reveal ${visible ? 'is-visible' : ''} ${className}`} {...rest}>
       {children}
-    </div>
+    </Tag>
   )
 }

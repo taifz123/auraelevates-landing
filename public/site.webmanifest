@@ -1,11 +1,11 @@
 {
   "name": "AuraElevates",
   "short_name": "AuraElevates",
-  "description": "First-person event filming from inside the moment.",
+  "description": "Stay steady when life moves. Practical posture, balance and stability training for standing confidently on buses and trains.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#020207",
-  "theme_color": "#020207",
+  "background_color": "#0a1424",
+  "theme_color": "#0a1424",
   "icons": [
     {
       "src": "/icon-192.png",

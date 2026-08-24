@@ -1,33 +1,32 @@
+// AuraElevates - central site configuration.
+// Update PAYHIP_URL here to change every purchase CTA across the site.
+// Update INSTAGRAM_URL here to change every Instagram link across the site.
+
 const CONFIG = {
   brand: {
     name: 'AuraElevates',
-    descriptor: 'First-person event filming',
-    logo: '/brand/auraelevates-logo.webp',
+    tagline: 'Stay steady when life moves.',
+    // Attached brand logo (faceless mark on midnight navy).
+    logo: '/brand/logo.jpg',
+    favicon: '/favicon.png',
   },
-  contact: {
-    instagram: 'https://www.instagram.com/auraelevates',
-    instagramDirect: 'https://ig.me/m/auraelevates',
+  // Primary conversion target. Every "Get the guide" CTA opens this URL.
+  payhipUrl: '[placeholder]',
+  instagram: {
+    url: 'https://www.instagram.com/auraelevates/',
     handle: '@auraelevates',
   },
-  media: {
-    demo: {
-      mp4: '/media/aura-demo.mp4',
-      webm: '/media/aura-demo.webm',
-      poster: '/media/aura-demo-poster.webp',
-    },
-  },
-  product: {
-    name: 'Ray-Ban Meta smart glasses',
-    views: {
-      front: '/product/meta-wayfarer-front.webp',
-      left: '/product/meta-wayfarer-left.webp',
-      right: '/product/meta-wayfarer-right.webp',
-      rear: '/product/meta-wayfarer-rear.webp',
-    },
-  },
+  nav: [
+    { label: 'How It Works', href: '#method' },
+    { label: 'What You Get', href: '#product' },
+    { label: 'Instagram', href: 'https://www.instagram.com/auraelevates/', external: true },
+  ],
   seo: {
-    siteUrl: 'https://www.auraelevatesco.com/',
-    ogImage: 'https://www.auraelevatesco.com/og-image.jpg',
+    title: 'AuraElevates: Stay steady when life moves.',
+    description:
+      'A practical guide to better posture, balance and confidence while standing on buses and trains.',
+    url: 'https://www.auraelevates.com/',
+    ogImage: '/og-image.jpg',
   },
 }
 
