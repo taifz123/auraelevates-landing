@@ -7,6 +7,7 @@ import Reframe from './sections/Reframe'
 import Method from './sections/Method'
 import Product from './sections/Product'
 import Confidence from './sections/Confidence'
+import BrandStory from './sections/BrandStory'
 import FAQ from './sections/FAQ'
 import FinalCTA from './sections/FinalCTA'
 
@@ -21,6 +22,7 @@ export default function App() {
         <Method />
         <Product />
         <Confidence />
+        <BrandStory />
         <FAQ />
         <FinalCTA />
       </main>

@@ -25,7 +25,7 @@ const CONFIG = {
     title: 'AuraElevates: Stay steady when life moves.',
     description:
       'A practical guide to better posture, balance and confidence while standing on buses and trains.',
-    url: 'https://www.auraelevates.com/',
+    url: 'https://www.auraelevatesco.com/',
     ogImage: '/og-image.jpg',
   },
 }

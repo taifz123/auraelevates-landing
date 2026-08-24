@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.auraelevates.com/sitemap.xml
+Sitemap: https://www.auraelevatesco.com/sitemap.xml

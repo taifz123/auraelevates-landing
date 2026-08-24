@@ -30,8 +30,8 @@ npm run preview
 
 All purchase and social links are centralized in `src/data/config.js`:
 
-- `payhipUrl` — every purchase CTA opens this URL. Update this single value to roll out the real Payhip link everywhere.
-- `instagram.url` — every Instagram link uses `https://www.instagram.com/auraelevates/`.
+- `payhipUrl`: every purchase CTA opens this URL. Update this single value to roll out the real Payhip link everywhere.
+- `instagram.url`: every Instagram link uses `https://www.instagram.com/auraelevates/`.
 
 Every CTA button is rendered by `src/components/Button.jsx`, which reads `payhipUrl` by default. The nav and footer also pull Instagram and Payhip links from the same config.
 
