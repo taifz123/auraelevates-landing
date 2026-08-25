@@ -39,11 +39,11 @@ export default function Method() {
           ))}
         </div>
 
-        {/* Method graphic: abstract illustration of Align, Anchor, Adapt. */}
+        {/* Method graphic: anatomy-based posture diagram. */}
         <Reveal className="method-graphic">
           <img
             src={methodPhoto}
-            alt="Abstract illustration of three balanced nodes along a vertical alignment line with flowing motion lines, representing Align, Anchor and Adapt"
+            alt="Anatomical posture diagram of a faceless standing figure in side profile, with a vertical teal alignment plumb line from ear through shoulder, hip, knee and ankle, and foot and centre-of-gravity markers"
             className="media-img media-img--wide"
             width="1920"
             height="1080"

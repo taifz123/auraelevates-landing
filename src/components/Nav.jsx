@@ -20,7 +20,7 @@ export default function Nav() {
       <div className="nav__inner">
         <Logo />
         <nav aria-label="Primary">
-          <ul className={`nav__links ${open ? 'is-open' : ''}`}>
+          <ul id="primary-nav" className={`nav__links ${open ? 'is-open' : ''}`}>
             {CONFIG.nav.map((item) => (
               <li key={item.href}>
                 {item.external ? (
