@@ -509,6 +509,16 @@ li {
   aspect-ratio: 4 / 5;
 }
 
+/* Real photo frame (replaces a placeholder once the asset exists) */
+.media-img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
 /* Distinct background tints so placeholders don't all look the same */
 .ph--tint-teal {
   background:
