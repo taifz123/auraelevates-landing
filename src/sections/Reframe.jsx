@@ -1,6 +1,6 @@
 import React from 'react'
 import Reveal from '../components/Reveal'
-import solutionPhoto from '../assets/solution-photo.jpg'
+import heroPhoto from '../assets/hero-photo.jpg'
 
 export default function Reframe() {
   return (
@@ -20,12 +20,12 @@ export default function Reframe() {
         </Reveal>
 
         <div className="split" style={{ alignItems: 'center', marginTop: 'var(--space-10)' }}>
-          {/* Solution image: faceless commuter from torso to feet with stable
-              posture, soft knees and a grounded stance inside a modern train. */}
+          {/* Solution image: faceless commuter standing calmly inside a
+              modern train, holding a rail lightly, city lights outside. */}
           <Reveal>
             <img
-              src={solutionPhoto}
-              alt="Faceless commuter from torso to feet with stable posture, soft knees and a grounded stance inside a modern train"
+              src={heroPhoto}
+              alt="Faceless commuter standing calmly inside a modern train at night, holding a rail lightly, city lights blurred through the window"
               className="media-img"
               width="1080"
               height="1620"
