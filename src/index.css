@@ -194,6 +194,10 @@ li {
   margin-inline: auto;
 }
 
+.shell--narrow {
+  width: var(--shell-narrow);
+}
+
 .section {
   padding-block: clamp(var(--space-12), 8vw, var(--space-32));
 }
@@ -519,6 +523,10 @@ li {
   background: var(--surface);
 }
 
+.media-img--wide {
+  aspect-ratio: 16 / 9;
+}
+
 /* Distinct background tints so placeholders don't all look the same */
 .ph--tint-teal {
   background:
@@ -610,6 +618,45 @@ li {
   height: 22px;
   color: var(--accent);
   margin-top: 0.1em;
+}
+
+/* Problem cards (2x2 grid, no photo) */
+.problem-cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.problem-cards .card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+.card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent);
+}
+
+.card__icon .ic {
+  width: 22px;
+  height: 22px;
+}
+
+.problem-cards .card__body {
+  margin-top: 0;
+  font-size: var(--text-base);
+  color: var(--text-soft);
+  line-height: 1.5;
 }
 
 .problem-grid {
@@ -946,6 +993,9 @@ li {
   .footer__grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
+  }
+  .problem-cards {
+    grid-template-columns: 1fr;
   }
 }
 

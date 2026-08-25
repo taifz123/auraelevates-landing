@@ -1,9 +1,8 @@
 import React from 'react'
 import Button from '../components/Button'
-import Placeholder from '../components/Placeholder'
 import Reveal from '../components/Reveal'
 import { Check } from '../components/icons'
-import ProductGlyph from './ProductGlyph'
+import productPhoto from '../assets/product-photo.jpg'
 
 const includes = [
   'Simple posture cues for standing tall without stiffening up',
@@ -26,19 +25,17 @@ export default function Product() {
         </Reveal>
 
         <div className="product-grid">
-          {/* Product preview placeholder.
-              Replace with: premium phone or tablet mockup showing an abstract
-              non-readable PDF or training-guide interface. */}
-          <Reveal className="product-card">
-            <Placeholder
-              ratio="product"
-              tint="deep"
-              glyphClassName="ph__glyph--teal"
-              label="Product preview"
+          {/* Product preview: tablet mockup showing the guide table of contents. */}
+          <Reveal>
+            <img
+              src={productPhoto}
               alt="Tablet mockup showing the Stand Steady Guide table of contents: posture cues, foot position, balance drills, braking and turning, and a confidence routine"
-            >
-              <ProductGlyph />
-            </Placeholder>
+              className="media-img"
+              width="1080"
+              height="1620"
+              loading="lazy"
+              decoding="async"
+            />
           </Reveal>
 
           <Reveal>
