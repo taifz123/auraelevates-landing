@@ -5,19 +5,25 @@ import React from 'react'
 // describe exactly what asset should go here, so swaps are unambiguous.
 //
 // Usage:
-//   <Placeholder ratio="hero" label="Hero - commuter in train" alt="...">
+//   <Placeholder ratio="hero" tint="teal" label="Hero" alt="...">
 //     <glyph svg />
 //   </Placeholder>
 export default function Placeholder({
   ratio = 'wide',
+  tint,
+  glyphClassName = '',
   label,
   alt,
   children,
   className = '',
 }) {
   return (
-    <figure className={`ph ph--${ratio} ${className}`} role="img" aria-label={alt}>
-      <div className="ph__glyph" aria-hidden="true">
+    <figure
+      className={`ph ph--${ratio} ${tint ? `ph--tint-${tint}` : ''} ${className}`}
+      role="img"
+      aria-label={alt}
+    >
+      <div className={`ph__glyph ${glyphClassName}`} aria-hidden="true">
         {children ?? <DefaultGlyph />}
       </div>
       {label && (

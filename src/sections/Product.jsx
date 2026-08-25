@@ -3,6 +3,7 @@ import Button from '../components/Button'
 import Placeholder from '../components/Placeholder'
 import Reveal from '../components/Reveal'
 import { Check } from '../components/icons'
+import ProductGlyph from './ProductGlyph'
 
 const includes = [
   'Simple posture cues for standing tall without stiffening up',
@@ -11,23 +12,6 @@ const includes = [
   'Guidance for braking, turning and sudden changes in motion',
   'A simple routine to build confidence over time',
 ]
-
-// Product preview glyph: phone/tablet mockup showing an abstract guide interface.
-function ProductGlyph() {
-  return (
-    <svg viewBox="0 0 160 220" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round">
-      <rect x="40" y="14" width="80" height="192" rx="12" />
-      <rect x="50" y="30" width="60" height="8" rx="4" opacity="0.5" />
-      <rect x="50" y="48" width="40" height="6" rx="3" opacity="0.35" />
-      <line x1="50" y1="72" x2="110" y2="72" opacity="0.3" />
-      <line x1="50" y1="86" x2="100" y2="86" opacity="0.3" />
-      <circle cx="80" cy="120" r="10" opacity="0.4" />
-      <line x1="50" y1="150" x2="110" y2="150" opacity="0.3" />
-      <line x1="50" y1="164" x2="90" y2="164" opacity="0.3" />
-      <rect x="72" y="196" width="16" height="3" rx="1.5" />
-    </svg>
-  )
-}
 
 export default function Product() {
   return (
@@ -48,8 +32,10 @@ export default function Product() {
           <Reveal className="product-card">
             <Placeholder
               ratio="product"
+              tint="deep"
+              glyphClassName="ph__glyph--teal"
               label="Product preview"
-              alt="Premium tablet mockup showing an abstract non-readable training guide interface"
+              alt="Tablet mockup showing the Stand Steady Guide table of contents: posture cues, foot position, balance drills, braking and turning, and a confidence routine"
             >
               <ProductGlyph />
             </Placeholder>
